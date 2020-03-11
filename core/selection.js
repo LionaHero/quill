@@ -178,7 +178,7 @@ class Selection {
   getContext() {
     // const supportsShadowDOM = !!HTMLElement.prototype.attachShadow;
     let ctx = document;
-    if (HTMLElement.prototype.attachShadow === true) {
+    if (typeof HTMLElement.prototype.attachShadow === 'function') {
       let el = this.root.parentNode;
       while (!(el === document || el instanceof ShadowRoot)) {
         el = el.parentNode;
